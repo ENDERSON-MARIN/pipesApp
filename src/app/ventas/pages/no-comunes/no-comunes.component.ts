@@ -40,4 +40,20 @@ export class NoComunesComponent {
     edad:35,
     Dirección: "Medellín, Colombia"
   }
+
+  //Json Pipe
+  heroes = [
+   {
+    'nombre':"Superman",
+    'vuela': true
+   },
+   {
+    'nombre':"Robin",
+    'vuela': false
+   },
+   {
+    'nombre':"Spiderman",
+    'vuela': true
+   }
+  ]
 }
