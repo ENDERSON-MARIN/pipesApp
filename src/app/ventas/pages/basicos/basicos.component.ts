@@ -11,5 +11,7 @@ nombreLower:string = "enderson";
 nombreUpper:string = "ENDERSON";
 nombreCompleto:string = "EndeRson MaRín";
 
+fecha:Date = new Date();
+
 
 }
