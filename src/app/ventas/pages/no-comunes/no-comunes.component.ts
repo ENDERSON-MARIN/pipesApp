@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styles: [],
 })
 export class NoComunesComponent {
+
   // i18nSelect Pipe
   nombre: string = 'Enderson';
   genero: string = 'masculino';
@@ -31,5 +32,12 @@ export class NoComunesComponent {
 
   eliminarCliente(){
     this.clientes.pop()
+  }
+
+  //Keyvalue Pipe
+  persona = {
+    nombre:"Enderson",
+    edad:35,
+    Dirección: "Medellín, Colombia"
   }
 }
