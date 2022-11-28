@@ -8,6 +8,7 @@ import { Color, Heroe } from '../../interfaces/ventas.interfaces';
 })
 export class OrdenarComponent implements OnInit {
   mayuscula: boolean = true;
+  ordenarPor:string = ''
 
   constructor() {}
 
@@ -43,5 +44,10 @@ export class OrdenarComponent implements OnInit {
 
   toggle() {
     this.mayuscula = !this.mayuscula;
+  }
+
+  cambiarOrden(valor:string){
+    this.ordenarPor = valor
+    console.log(valor)
   }
 }
