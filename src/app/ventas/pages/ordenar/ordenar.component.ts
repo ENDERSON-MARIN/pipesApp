@@ -4,48 +4,44 @@ import { Color, Heroe } from '../../interfaces/ventas.interfaces';
 @Component({
   selector: 'app-ordenar',
   templateUrl: './ordenar.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class OrdenarComponent implements OnInit {
-  mayuscula :boolean = true
+  mayuscula: boolean = true;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  heroes: Heroe[] = [
+    {
+      nombre: 'Superman',
+      vuela: true,
+      color: Color.azul,
+    },
+    {
+      nombre: 'Batman',
+      vuela: false,
+      color: Color.negro,
+    },
+    {
+      nombre: 'Robin',
+      vuela: false,
+      color: Color.amarillo,
+    },
+    {
+      nombre: 'Linterna Verde',
+      vuela: true,
+      color: Color.verde,
+    },
+    {
+      nombre: 'Spiderman',
+      vuela: true,
+      color: Color.rojo,
+    },
+  ];
+
+  toggle() {
+    this.mayuscula = !this.mayuscula;
   }
-
-  heroes:Heroe[] = [
-    {
-     nombre:"Superman",
-     vuela:true,
-     color:Color.azul
-    },
-    {
-      nombre:"Batman",
-      vuela:false,
-      color:Color.negro
-    },
-    {
-      nombre:"Robin",
-      vuela:false,
-      color:Color.amarillo
-    },
-    {
-      nombre:"Linterna Verde",
-      vuela:true,
-      color:Color.verde
-    },
-    {
-      nombre:"Spiderman",
-      vuela:true,
-      color:Color.rojo
-    },
-
-  ]
-
-  toggle(){
-    this.mayuscula = !this.mayuscula
-  }
-
 }

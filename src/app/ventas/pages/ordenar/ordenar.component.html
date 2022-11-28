@@ -35,7 +35,7 @@
 
 <div class="grid">
   <div class="col mt-3">
-    <p-table [value]="heroes">
+    <p-table [value]="heroes | ordenar">
       <ng-template pTemplate="header">
         <tr>
           <th>Nombre</th>
