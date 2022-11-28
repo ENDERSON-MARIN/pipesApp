@@ -1,10 +1,12 @@
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name:'mayusculas'
+  name: 'mayusculas',
 })
 export class MayusculasPipe implements PipeTransform {
-  transform(value: string):string {
-      return 'PIPE MAYUSCULA PERSONALIZADO'
+  transform(value: string, enMayusculas: boolean = true): string {
+    return (enMayusculas)
+     ? value.toUpperCase()
+     : value.toLowerCase();
   }
 }
