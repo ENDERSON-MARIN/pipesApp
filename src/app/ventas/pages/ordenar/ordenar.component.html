@@ -18,7 +18,8 @@
       label="Por Nombre"
       icon="pi pi-sort"
       class="mr-1"
-      (click)="cambiarOrden('nombre')"></button>
+      (click)="cambiarOrden('nombre')"
+    ></button>
     <button
       pButton
       label="Vuela"
@@ -38,12 +39,40 @@
 
 <div class="grid">
   <div class="col mt-3">
-    <p-table [value]="heroes | ordenar:ordenarPor">
+    <p-table [value]="heroes | ordenar: ordenarPor">
       <ng-template pTemplate="header">
         <tr>
           <th>Nombre</th>
           <th>Vuela</th>
           <th>Color</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-heroe>
+        <tr>
+          <td>{{ heroe.nombre }}</td>
+          <td>{{ heroe.vuela | vuela | titlecase }}</td>
+          <td>{{ heroe.color }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+<hr />
+<div class="grid">
+  <div class="col mt-3">
+    <!-- con el pipe slice agregamos una copia del array -->
+    <p-table [value]="heroes | slice: 0">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="nombre">
+            Nombre <p-sortIcon field="nombre"></p-sortIcon>
+          </th>
+          <th pSortableColumn="vuela">
+            Vuela <p-sortIcon field="vuela"></p-sortIcon>
+          </th>
+          <th pSortableColumn="color">
+            Color <p-sortIcon field="color"></p-sortIcon>
+          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-heroe>
